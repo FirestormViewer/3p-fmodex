@@ -87,6 +87,12 @@ pushd "$FMOD_SOURCE_DIR"
             cp "api/lib/fmodex_vc.lib" "$stage_release"
             cp "api/fmodexL.dll" "$stage_debug"
             cp "api/fmodex.dll" "$stage_release"
+
+            cp "api/lib/fmodexL64_vc.lib" "$stage_debug"
+            cp "api/lib/fmodex64_vc.lib" "$stage_release"
+            cp "api/fmodexL64.dll" "$stage_debug"
+            cp "api/fmodex64.dll" "$stage_release"
+
         ;;
         "darwin")
             cp "api/lib/libfmodexL.dylib" "$stage_debug"
