@@ -24,27 +24,31 @@ set -x
 # Form the official fmod archive URL to fetch
 # Note: fmod is provided in 3 flavors (one per platform) of precompiled binaries. We do not have access to source code.
 FMOD_ROOT_NAME="fmodapi"
-FMOD_VERSION="44418"
+FMOD_VERSION="44421"
+
 case "$AUTOBUILD_PLATFORM" in
     "windows")
     FMOD_PLATFORM="win-installer"
+    FMOD_PLATFORM_DIR="Win"
     FMOD_FILEEXTENSION=".exe"
-    FMOD_MD5="96f7ada949b60f0ec3782f9139026ee8"
+    FMOD_MD5="dedf5e3c74571f725da49bb95b09ec1e"
     ;;
     "darwin")
     FMOD_PLATFORM="mac-installer"
+    FMOD_PLATFORM_DIR="Mac"
     FMOD_FILEEXTENSION=".dmg"
-    FMOD_MD5="051c00e6941f61727a534d05183627e4"
+    FMOD_MD5="ec6c28b34e9c67c6fd18f064375a7eb4"
     ;;
     "linux")
     FMOD_PLATFORM="linux"
+    FMOD_PLATFORM_DIR="Linux"
     FMOD_FILEEXTENSION=".tar.gz"
-    FMOD_MD5="759906c267e7fac55da4159a7a8c6e0b"
+    FMOD_MD5="8cc1e2cd358430ba1c4fc5aa80451514"
     ;;
 esac
 FMOD_SOURCE_DIR="$FMOD_ROOT_NAME$FMOD_VERSION$FMOD_PLATFORM"
 FMOD_ARCHIVE="$FMOD_SOURCE_DIR$FMOD_FILEEXTENSION"
-FMOD_URL="http://www.fmod.org/files/download/$FMOD_ARCHIVE"
+FMOD_URL="http://www.fmod.org/download/fmodex/api/${FMOD_PLATFORM_DIR}/$FMOD_ARCHIVE"
 
 # Fetch and extract the official fmod files
 fetch_archive "$FMOD_URL" "$FMOD_ARCHIVE" "$FMOD_MD5"
