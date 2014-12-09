@@ -73,6 +73,8 @@ stage="$(pwd)/stage"
 stage_release="$stage/lib/release"
 stage_debug="$stage/lib/debug"
 
+echo $FMOD_VERSION > "${stage}/VERSION.txt"
+
 # Create the staging license folder
 mkdir -p "$stage/LICENSES"
 
