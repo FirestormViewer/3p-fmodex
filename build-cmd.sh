@@ -24,26 +24,26 @@ set -x
 # Form the official fmod archive URL to fetch
 # Note: fmod is provided in 3 flavors (one per platform) of precompiled binaries. We do not have access to source code.
 FMOD_ROOT_NAME="fmodapi"
-FMOD_VERSION="44432"
+FMOD_VERSION="44453"
 
 case "$AUTOBUILD_PLATFORM" in
     "windows")
     FMOD_PLATFORM="win-installer"
     FMOD_PLATFORM_DIR="Win"
     FMOD_FILEEXTENSION=".exe"
-    FMOD_MD5="5ea24b2f370fa099b5b0c7767d95bdfe"
+    FMOD_MD5="c93ecff37e183bae0f9861b26a99ce6b"
     ;;
     "darwin")
     FMOD_PLATFORM="mac-installer"
     FMOD_PLATFORM_DIR="Mac"
     FMOD_FILEEXTENSION=".dmg"
-    FMOD_MD5="7014c474e99d3f2b18c3062b1c70a165"
+    FMOD_MD5="10703ab55411d6b3e3cab761d95f7cb6"
     ;;
     "linux")
     FMOD_PLATFORM="linux"
     FMOD_PLATFORM_DIR="Linux"
     FMOD_FILEEXTENSION=".tar.gz"
-    FMOD_MD5="e3ecf4fbfdfba25cd633a714aa591631"
+    FMOD_MD5="aff296d24d49758abb4aaae225ad19b2"
     ;;
 esac
 FMOD_SOURCE_DIR="$FMOD_ROOT_NAME$FMOD_VERSION$FMOD_PLATFORM"
